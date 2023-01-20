@@ -1,0 +1,21 @@
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background: #2B292E;
+    color: #fafafa;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 7rem;
+}
+
+#container {
+    margin-right: auto;
+    margin-left: auto;
+    border: 3px solid green;
+}
+
+.center {
+    text-align: center;
+    border: 3px solid green;
+}
