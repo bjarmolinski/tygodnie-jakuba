@@ -1,3 +1,10 @@
+const express = require('express');
+const path = require('path');
+const app = express();
+
+const port = process.env.PORT || 3000;
+app.set('view engine', 'pug');
+
 const birthDate = new Date("2022-12-24T02:45:00");
 const currentDate = new Date();
 
@@ -9,7 +16,10 @@ const daysForWeeks = diffDays % 7;
 const displayWeeks = `${diffWeeks} weeks and ${daysForWeeks} days.`;
 const displayDays = `${diffDays} days.`;
 
-const weeks = document.getElementById('weeks');
-const days = document.getElementById('days');
-weeks.textContent = displayWeeks;
-days.textContent = displayDays;
+app.get('/', (req, res)=> {
+    res.render('index', { title: 'Jakub\'s age: ', weeks: displayWeeks, days: displayDays});
+});
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
+})
